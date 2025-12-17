@@ -57,36 +57,38 @@ each .cr2 file to a .jpg while preserving the original folder structure.
 
 Input directory before conversion:
 
+```
 project/
+├── convert.py
 ├── event1/
 │   ├── img001.cr2
 │   └── img002.cr2
-├── event2/
-│   ├── subeventA/
-│   │   └── photoA.cr2
-│   └── subeventB/
-│       └── photoB.cr2
-└── misc/
-    └── test.cr2
+└──  event2/
+    ├── subeventA/
+    │   └── photoA.cr2
+    └── subeventB/
+        └── photoB.cr2
+```
 
 Output after conversion:
 
+```
 project/
+├── convert.py
 ├── event1/
 │   ├── img001.cr2
 │   └── img001.jpg
 │   ├── img002.cr2
 │   └── img002.jpg
-├── event2/
-│   ├── subeventA/
-│   │   ├── photoA.cr2
-│   │   └── photoA.jpg
-│   └── subeventB/
-│       ├── photoB.cr2
-│       └── photoB.jpg
-└── misc/
-    ├── test.cr2
-    └── test.jpg
+└── event2/
+    ├── subeventA/
+    │   ├── photoA.cr2
+    │   └── photoA.jpg
+    └── subeventB/
+        ├── photoB.cr2
+        └── photoB.jpg
+
+```
 
 ## LICENSE
 
