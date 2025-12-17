@@ -1,4 +1,3 @@
-
 # CR2 to JPG Batch Converter
 
 A Python script for recursively converting Canon CR2 RAW files to JPG while preserving the existing folder structure.
@@ -27,6 +26,11 @@ A Python script for recursively converting Canon CR2 RAW files to JPG while pres
 - rawpy (MIT License)
 - Pillow (HPND License)
 
+⚠️ Note for Windows users:
+  Installing rawpy via the standard CMD may not work if multiple
+  Python environments exist. It is recommended to use VS Code
+  or another IDE with the correct Python environment selected.
+
 ## Installation
 
 ```bash
@@ -39,14 +43,53 @@ pip install rawpy pillow
 python convert.py
 ```
 
-All .cr2 files in the current folder and its subfolders will be automatically converted to JPG.
+The script will automatically traverse all subfolders, converting
+each .cr2 file to a .jpg while preserving the original folder structure.
 
-## Output
+## OUTPUT
 
-- JPG files are saved in the same folder as the CR2 files
-- Filenames are preserved: `photo.cr2` → `photo.jpg`
+- Converted JPG files are saved in the **same folder** as the source CR2 files
+- Original filenames are preserved:
+  photo.cr2 -> photo.jpg
+- Subfolder hierarchy is maintained exactly as in the input directory
 
-## License
+## EXAMPLE FOLDER TREE
 
-MIT License  
+Input directory before conversion:
+
+project/
+├── event1/
+│   ├── img001.cr2
+│   └── img002.cr2
+├── event2/
+│   ├── subeventA/
+│   │   └── photoA.cr2
+│   └── subeventB/
+│       └── photoB.cr2
+└── misc/
+    └── test.cr2
+
+Output after conversion:
+
+project/
+├── event1/
+│   ├── img001.cr2
+│   └── img001.jpg
+│   ├── img002.cr2
+│   └── img002.jpg
+├── event2/
+│   ├── subeventA/
+│   │   ├── photoA.cr2
+│   │   └── photoA.jpg
+│   └── subeventB/
+│       ├── photoB.cr2
+│       └── photoB.jpg
+└── misc/
+    ├── test.cr2
+    └── test.jpg
+
+## LICENSE
+
+MIT License
 Copyright (c) 2025 codepec
+
