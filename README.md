@@ -23,7 +23,7 @@ A Python script for recursively converting Canon CR2 RAW files to JPG while pres
 
 ## Requirements
 
-- Python 3.8 – 3.11
+- Python 3.8 – 3.12 (tested with Python 3.12)
 - rawpy (MIT License)
 - Pillow (HPND License)
 
